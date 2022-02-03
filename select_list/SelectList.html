@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tabs in Javascript</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+<link rel="stylesheet" href="./selectCss.css">
+
+<style>
+
+</style>
+</head>
+<body>
+    <select id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+    <div id="pid"></div>
+    <button onclick="selectvalue()">Click</button>
+<script>
+
+    function selectvalue (){
+        let selectVal = document.getElementById("cars");
+        console.log(selectVal[selectVal.selectedIndex].value);
+        document.getElementById('pid').innerHTML = selectVal[selectVal.selectedIndex].value;
+
+
+    }
+
+</script>
+
+</body>
+</html> 
