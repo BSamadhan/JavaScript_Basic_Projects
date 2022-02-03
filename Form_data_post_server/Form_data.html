@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Data Post Server AIP in Javascript</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+<link rel="stylesheet" href="./Form_dataCss.css"/>
+
+</head>
+<body>
+
+    
+<form action="" method="post" class="shwobox">
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="email" name="email" required>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">first_name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="fname" name="fname" required>
+        </div>
+    </div>
+    <button type="submit" id="btnshow">Submit</button>
+</form>
+<!-- <button type="submit" id="btnshow">Submit</button> -->
+    
+
+<script>
+      // Without Function 
+       const data = {
+            fname: "Deepak",
+            lname: "Behere"
+        }
+
+        fetch('https://reqres.in/api/users',{
+            method: 'POST',
+            headers:{
+                'content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then((res)=>{
+            return res.json();
+        }).then((data)=>{
+            console.log('Success', data)
+        }).catch((err)=>{
+            console.log('Not Success', err)
+        })
+
+    //  document.getElementById("btnshow").addEventListener('click',postdata); 
+
+    
+    // function postdata(e){
+    //     e.preventDefault();
+    //     let email = document.getElementById("email").value;
+    //     let fname = document.getElementById("fname").value;
+
+    //     let myInit ={
+    //         method : 'POST',
+    //         headers : {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({email:email, fname: fname})
+    //     }
+    //     console.log("Body:", myInit.body)
+
+    //     fetch('https://reqres.in/api/users', myInit)
+    //     .then((res)=>{
+    //         if(!res.ok){
+    //             throw Error(res.statusText);
+    //         }
+    //         console.log(res);
+    //         return res.json();
+    //     }).then((data)=>{
+    //         console.log(data);
+    //     })
+    // }
+
+        
+    // async function postdata(e) {
+    // e.preventDefault()
+    // try {
+    //     let email = document.getElementById("email").value
+    //     let fname = document.getElementById("fname").value
+    //     const myInit = {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ email: email, fname: fname })
+    //     }
+    //     const res = await fetch('https://reqres.in/api/users', myInit)
+    //     const data = await res.json()
+    //     console.log(data)
+    // } catch (error) {
+    //     console.log(error)
+    // }
+    // }
+
+</script>
+
+
+</body>
+</html> 
