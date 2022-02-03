@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To Do list in Javascript</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+<link rel="stylesheet" href="./todaolics.css">
+
+<style>
+
+</style>
+</head>
+<body>
+
+<h2 style="text-align: center;">To Do List</h2>
+
+<div class="Todolist">
+    <form>
+        <input type="text" id="addElem" required/>
+        <input type="submit" id="addBtn" value="Add List"/>
+        <br><br>
+        <input type="text" id="filter"/>
+    </form>
+
+
+    <ul id="ulist">
+
+    </ul>
+</div>
+<script>
+
+    let addLi = document.getElementById('addBtn');
+    let ulList = document.getElementById('ulist');
+    let deleteLi = document.getElementsByClassName('.close');
+    let searchtext = document.getElementById('filter');
+
+    addLi.addEventListener('click', addList);
+    ulList.addEventListener('click', deleteElem)
+    searchtext.addEventListener('keyup', fileterElem);
+    
+    // Add Element
+    function addList(e){
+        e.preventDefault();
+       let li = document.createElement("li");
+       let litext = document.getElementById('addElem').value;
+       let text = document.createTextNode(litext);
+       let span = document.createElement("span");
+       span.className="close";
+       let spantext = document.createTextNode("x");
+       span.appendChild(spantext)
+
+       li.appendChild(text);
+       li.appendChild(span);
+       document.getElementById("ulist").appendChild(li);
+       document.getElementById("addElem").value = "";
+    }
+
+    // Remove Element
+    function deleteElem(e){
+        if(e.target.classList.contains('close')){
+            if(confirm('Are you sue delete list')){
+                let li = e.target.parentElement;
+                ulList.removeChild(li);
+            }
+        }
+    }
+
+    // Search Element
+    function fileterElem(e){
+        //alert(e.target);
+        let vltext = e.target.value.toLowerCase();
+        let li = document.getElementsByTagName('li');
+        console.log(Array.from(li));
+
+        Array.from(li).forEach((item,index)=>{
+            let itemname = item.firstChild.textContent;
+            if(itemname.toLowerCase().indexOf(vltext) !=-1){
+                item.style.display = "block";
+            }else{
+                item.style.display = "none";
+            }
+        })
+    }
+
+
+
+
+</script>
+</body>
+</html> 

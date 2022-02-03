@@ -1,0 +1,32 @@
+/* Style the tab */
+.Todolist {
+  width: 250px;
+  margin: 20px auto;
+
+}
+input[type="text"]:focus {
+  outline: 0;
+}
+.Todolist ul {
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  width: 180px;
+}
+.Todolist ul li {
+  display: inline-block;
+  width: 100%;
+  padding-top: 10px;
+}
+.Todolist ul li span {
+  float: right;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  line-height: 13px;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 11px;
+  opacity: 1;
+}
