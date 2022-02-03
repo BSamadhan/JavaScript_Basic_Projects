@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tabs in Javascript</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+<link rel="stylesheet" href="./tabCss.css">
+
+<style>
+
+</style>
+</head>
+<body>
+
+<h2 style="text-align: center;">Tabs</h2>
+<div class="TabsOuter">
+    <div class="tab"> 
+       <ul>
+           <li><a href="#" class="tablinks active" onclick="openCity(event,'Pune')">Pune</a></li>
+           <li><a href="#" class="tablinks" onclick="openCity(event,'Mumbai')">Mumbai</a></li>
+           <li><a href="#" class="tablinks" onclick="openCity(event,'Dehli')">Dehli</a></li>
+           <li><a href="#" class="tablinks" onclick="openCity(event,'Kolkata')">Kolkata</a></li>
+           <li><a href="#" class="tablinks" onclick="openCity(event,'Nashik')">Nashik</a></li>
+       </ul>
+    </div>
+  
+    <div id="Pune" class="tabcontent" style="display: block;">
+        <h3>Pune</h3>
+        <p>Pune is the capital city of India.</p>
+    </div>  
+    <div id="Mumbai" class="tabcontent">
+        <h3>Mumbai</h3>
+        <p>Mumbai is the capital of India.</p> 
+    </div>   
+    <div id="Dehli" class="tabcontent">
+        <h3>Dehli</h3>
+        <p>Dehli is the capital of India.</p>
+    </div>
+    <div id="Kolkata" class="tabcontent">
+        <h3>Kolkata</h3>
+        <p>Kolkata is the capital of India.</p>
+    </div>
+    <div id="Nashik" class="tabcontent">
+        <h3>Nashik</h3>
+        <p>Tokyo is the capital of India.</p>
+    </div>
+</div>
+<script>
+ 
+    function openCity(evt, cityName){
+        const tabcontent = document.getElementsByClassName("tabcontent");
+        const tablinks = document.getElementsByClassName("tablinks");
+
+        for(let i = 0; i < tabcontent.length; i++){
+            tabcontent[i].style.display = "none";
+        }
+        for(let i = 0; i < tablinks.length; i++){
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        
+    }
+  
+
+</script>
+
+</body>
+</html> 
