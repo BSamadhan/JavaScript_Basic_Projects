@@ -1,0 +1,40 @@
+.Accordion-panel {
+    background: #fff;
+    box-shadow: 1px 1px 13px 3px #ddd;
+    width: 700px;
+    margin: 0 auto 2px auto;
+}
+.Accordion-panel .accordion-hedaer a.accordion {
+    text-decoration: none;
+    background: none;
+    border: 0;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px;
+    display: block;
+    cursor: pointer;
+}
+.Accordion-panel 
+ .accordion-body {
+    padding: 10px;
+    display: none;
+}
+.accordion-hedaer {
+    border-bottom: 1px solid #ddd;
+}
+
+.show {
+    display: block;
+}
+.Accordion-panel .accordion-hedaer a.accordion span {
+    float: right;
+}
+.MinsIcon{
+    display: none;
+}
+.accordion-hedaer.active a .MinsIcon {
+    display: block;
+}
+.accordion-hedaer.active a .PlusIcon{
+    display: none;
+}

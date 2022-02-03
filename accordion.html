@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Accordion in Javascript</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+<link rel="stylesheet" href="./accordion.css">
+
+<style>
+
+</style>
+</head>
+<body>
+
+<h2 style="text-align: center;">Accordion</h2>
+<div class="Accordion-panel">
+    <div class="accordion-hedaer active">
+        <a class="accordion">Section 1 
+            <span class="PlusIcon"><i class="fas fa-plus"></i></span>
+            <span class="MinsIcon"><i class="fas fa-minus"></i></span>
+        </a>
+    </div>
+    <div class="accordion-body show">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+</div>
+<div class="Accordion-panel">
+    <div class="accordion-hedaer">
+        <a class="accordion">Section 1
+            <span class="PlusIcon"><i class="fas fa-plus"></i></span>
+            <span class="MinsIcon"><i class="fas fa-minus"></i></span>
+        </a>
+    </div>
+    <div class="accordion-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+</div>
+<div class="Accordion-panel">
+    <div class="accordion-hedaer">
+        <a class="accordion">Section 1
+            <span class="PlusIcon"><i class="fas fa-plus"></i></span>
+            <span class="MinsIcon"><i class="fas fa-minus"></i></span>
+        </a>
+    </div>
+    <div class="accordion-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+</div>
+<div class="Accordion-panel">
+    <div class="accordion-hedaer">
+        <a class="accordion">Section 1
+            <span class="PlusIcon"><i class="fas fa-plus"></i></span>
+            <span class="MinsIcon"><i class="fas fa-minus"></i></span>
+        </a>
+    </div>
+    <div class="accordion-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+</div> 
+
+<script>
+
+    let accordion = document.getElementsByClassName("accordion-hedaer");
+    for (let i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener("click", function() {
+        hideAll();
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle('show');
+    });
+    }
+
+    function hideAll() {
+    for (let i = 0; i < accordion.length; i++) {
+        accordion[i].classList.toggle("active", false);
+        accordion[i].nextElementSibling.classList.toggle("show", false);
+    }
+}
+  
+
+</script>
+
+</body>
+</html> 
