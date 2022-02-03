@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Read More Read Less in Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="./ReadMoreCss.css">
+
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center;">Read More Read Less in Javascript</h2>
+    <div class="ReadMore">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non volutpat quam. Quisque eget laoreet lectus. 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non volutpat quam. Quisque eget <span id="dots">...</span> 
+        <span class="content">Phasellus iaculis arcu nec sapien ullamcorper commodo. Suspendisse a rutrum nisi. Proin malesuada lectus quis neque pellentesque laoreet euismod vitae tortor. Morbi at sollicitudin ligula, ac tempor risus. Quisque lobortis, velit in luctus accumsan, augue quam fermentum ante, sed auctor felis tellus id velit. Etiam volutpat lorem id metus vehicula elementum.</span>
+        <a href="#" class="readmor" onclick="readmorereadless()">Read More...</a>
+    </div>
+
+
+    <!-- Script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+
+        function readmorereadless(){
+            let dots = document.querySelector("#dots");
+            let moretext = document.querySelector(".content");
+            let readmorebtn = document.querySelector(".readmor");
+
+            if(dots.style.display === "none"){
+                dots.style.display = "inline";
+                readmorebtn.innerHTML = "Read More...";
+                moretext.style.display = "none";
+            }
+            else{
+                dots.style.display = "none";
+                readmorebtn.innerHTML = "Read Less";
+                moretext.style.display = "inline";
+            }
+
+        }
+    
+
+    </script>
+
+</body>
+</html> 

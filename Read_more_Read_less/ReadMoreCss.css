@@ -1,0 +1,10 @@
+
+.ReadMore {
+  width: 470px;
+  margin: auto;
+  box-shadow: 0px 1px 8px 3px #ccc;
+  padding: 10px;
+}
+.ReadMore span.content{
+  display: none;
+}
