@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sidebar in Javascript</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+    .w3-sidebar{
+      transform:translate3d(-100%, 0, 0);
+      transition: all 0.5s ease;
+    }
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-border-right" id="mySidebar">
+  <button id="sidebar_close" class="w3-bar-item w3-large" style="text-align: right; cursor: pointer;">Sidebar &times;</button>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div>
+
+<!-- Page Content -->
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge" id="sidebar_open">☰</button>
+  <div class="w3-container">
+    <h1>My Page</h1>
+  </div>
+</div>
+
+<img src="img_car.jpg" alt="Car" style="width:100%">
+
+<div class="w3-container">
+<p>This sidebar is hidden by default, </p>
+<p>You must click on the "hamburger" icon (top left) to open it.</p>
+<p>The sidebar will hide a part of the page content.</p>
+</div>
+
+<script>
+    document.getElementById("sidebar_open").onclick = openbar;
+    document.getElementById("sidebar_close").onclick = closedbar;
+    function openbar(){
+      document.getElementById("mySidebar").style.transform = "translate3d(0, 0, 0)";
+    }
+    function closedbar(){
+        document.getElementById("mySidebar").style.transform = "translate3d(-100%, 0, 0)";
+    }
+</script>
+     
+</body>
+</html> 
