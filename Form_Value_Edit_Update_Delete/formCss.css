@@ -1,0 +1,31 @@
+/* Style the tab */
+.formControl {
+
+  margin: 30px auto;
+  box-shadow: 0px 4px 15px 2px #ccc;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+table {
+  counter-reset: rowNumber;
+}
+
+table tbody tr {
+  counter-increment: rowNumber;
+}
+
+table tbody tr td:first-child::before {
+  content: counter(rowNumber);
+  min-width: 1em;
+  margin-right: 0.5em;
+}
+
+
+#editform{
+  display: none;
+}
+#tableOuter {
+  box-shadow: 0px 4px 15px 2px #ccc;
+  margin-top: 30px;
+}
