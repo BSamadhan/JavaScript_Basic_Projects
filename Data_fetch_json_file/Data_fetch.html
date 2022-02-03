@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JSON in Javascript</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+<link rel="stylesheet" href="./Data_fetchCss.css"/>
+
+</head>
+<body>
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="Searchbox">
+                    <input type="text" class="form-control" id="searchdata" placeholder="Search...">
+                    <button type="button" id="searchbtn">Search</button>
+                </div>
+                
+            </div>
+            <div class="col-lg-12">
+                <div id="UsersData"></div>
+            </div>  
+        </div>
+    </div>
+
+    <button id="btn">Submit</button>
+    <div id="pid"></div>
+    <div id="title"></div>
+    <div id="body"></div>
+    
+
+<script>
+   // document.getElementById("btn").addEventListener('click', getdata);
+    // Single User Data fetch 
+    // async function getdata(){
+    //    //console.log("Hello");
+    //     try{
+    //         const res = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    //         const data = await res.json();
+    //        // console.log(data);
+    //         document.getElementById("pid").innerHTML  = data.id
+    //         document.getElementById("title").innerHTML  = data.title
+    //         document.getElementById("body").innerHTML  = data.body
+
+    //     }catch(err){
+    //         console.log(err);
+    //     }
+
+    // }
+
+
+    // Multiple User data fetch
+    // async function getdata(){
+    //     try{
+    //         let res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    //         let data = await res.json();
+    //         //console.log(data);
+    //         //let Output = document.getElementById('UsersData');
+
+    //         let text = '';
+
+    //         data.forEach(user => {
+    //             let {id,title,body} = user;
+
+    //             let Output= `<div class="shwobox">
+    //                 <div class="col-lg-9">
+    //                     <h3>${id}</h3>
+    //                     <p>${title}</p>
+    //                     <p>${body}</p>                        
+    //                 </div>
+    //                 </div>`;
+
+    //             text += Output;
+    //         });
+    //         let Output = document.getElementById('UsersData').innerHTML = text;
+    //     } catch(error){
+    //         console.log(error);
+    //     }
+    // }
+
+
+
+
+
+//Multi User fetch Data with two function
+async function getUsers(){
+    let mycontentarea = document.getElementById("UsersData");
+    let mysearchbtn = document.getElementById("searchbtn")
+    
+
+
+    let url = "people.json";
+    try{
+        let res = await fetch(url);
+        return await res.json();
+        //console.log(data)
+    }catch(err){
+        console.log(err)
+    }
+}
+async function renderData(){
+   let users = await getUsers();
+   let text = '';
+   users.forEach(user => {
+       let htmlstruct = `<div class="shwobox">
+        <div class="col-lg-3"><div class="userpic"><img src="${user.image}" /></div></div>
+        <div class="col-lg-9">
+            <h3>${user.name}</h3>
+            <p>${user.dob}</p>
+            <p>${user.age}</p>
+            <p>${user.died}</p>
+            <p>${user.knownFor}</p>
+            
+        </div>
+        </div>`;
+       text += htmlstruct;
+   });
+
+   document.getElementById("UsersData").innerHTML = text;
+}
+renderData();
+         
+</script>
+
+
+</body>
+</html> 
