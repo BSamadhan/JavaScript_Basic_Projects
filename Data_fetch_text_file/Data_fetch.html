@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tabs in Javascript</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+<link rel="stylesheet" href="./Data_fetchCss.css"/>
+
+</head>
+<body>
+
+    
+<button id="btnshow">show text</button>
+<p id="filedata"></p>
+    
+
+<script>
+    document.getElementById("btnshow").addEventListener('click',requestdata);
+    
+    function requestdata(){
+        const promiseobj = fetch('data.txt');
+        promiseobj.then((res)=>{
+            return res.text();
+        }).then((data)=>{
+            document.getElementById('filedata').innerHTML = data;
+        })
+    }
+
+    // function requestdata(){
+    //     fetch('data.txt').then((resp)=>{
+    //         return resp.text();
+    //     }).then((data)=>{
+    //         document.getElementById('filedata').innerHTML = data;
+    //     })
+    // }
+
+
+    // Promise | Handeled Errors
+
+    // function requestdata (){
+    //     const promobj = fetch('data1.txt');
+    //     // if(!promobj.ok){
+    //     //     throw Error(promobj.statusText);
+    //     // }
+    //     promobj.then((res)=>{
+    //         return res.text();
+    //     }).then((data)=>{
+    //         document.getElementById('filedata').innerHTML = data;
+    //     }).catch((err)=>{
+    //         console.log(err);
+    //     }) 
+    // }
+
+
+    // async & await | Error handling 
+    // async function requestdata (){
+    //     try{
+    //        const resp = await fetch('data.txt');
+    //        if(!resp.ok){
+    //            throw Error(resp.statusText);
+    //        }
+    //        const data = await resp.text()
+    //        document.getElementById('filedata').innerHTML = data;
+    //     }catch (err){
+    //         console.log(err);
+    //     }
+    // }
+
+
+
+
+</script>
+
+
+</body>
+</html> 
